@@ -1,0 +1,2 @@
+config/ssh/ansible/known_hosts
+config/ssh/ansible/known_hosts.old

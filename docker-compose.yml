@@ -1,0 +1,26 @@
+version: '3.9'
+services:
+  ansible:
+    build: 
+      context: .
+      dockerfile: ansible.Dockerfile
+    image: ansible-playground
+    volumes:
+      - ./config/ssh/ansible:/home/ansible/.ssh
+      - ./ansible:/ansible
+
+  host1:
+    build: 
+      context: .
+      dockerfile: hosts.Dockerfile
+    image: ansible-hosts
+    volumes:
+      - ./config/ssh/hosts:/root/.ssh
+
+  host2:
+    build: 
+      context: .
+      dockerfile: hosts.Dockerfile
+    image: ansible-hosts
+    volumes:
+      - ./config/ssh/hosts:/root/.ssh
